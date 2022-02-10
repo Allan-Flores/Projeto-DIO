@@ -6,3 +6,6 @@
  - Mapeamento de modelos {Gets, Post, Put e Delete}
  - Deploy do projeto no Heroku
  - Teste unitário
+
+
+Link principal no Heroku: https://peopleapi-live40.herokuapp.com/api/v1/people/
