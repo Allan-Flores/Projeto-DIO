@@ -1,6 +1,6 @@
 package com.dio.personapi.mapper;
 
-import com.dio.personapi.dto.PersonDTO;
+import com.dio.personapi.dto.request.PersonDTO;
 import com.dio.personapi.entity.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

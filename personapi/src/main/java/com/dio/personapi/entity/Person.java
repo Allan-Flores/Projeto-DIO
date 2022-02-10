@@ -8,9 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Getter
-@Setter
-//@Builder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Person {

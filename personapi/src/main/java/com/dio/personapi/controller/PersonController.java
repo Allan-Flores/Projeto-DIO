@@ -1,6 +1,6 @@
 package com.dio.personapi.controller;
 
-import com.dio.personapi.dto.PersonDTO;
+import com.dio.personapi.dto.request.PersonDTO;
 import com.dio.personapi.exception.PersonNotFoundException;
 import com.dio.personapi.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;

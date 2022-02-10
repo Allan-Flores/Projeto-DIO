@@ -1,6 +1,7 @@
 package com.dio.personapi.service;
 
-import com.dio.personapi.dto.PersonDTO;
+import com.dio.personapi.dto.request.PersonDTO;
+import com.dio.personapi.dto.response.MessageResponseDTO;
 import com.dio.personapi.entity.Person;
 import com.dio.personapi.exception.PersonNotFoundException;
 import com.dio.personapi.mapper.PersonMapper;
@@ -22,7 +23,7 @@ public class PersonService {
         Person personParaSalvar = personMapper.toModel(personDTO);
 
         Person personSalva = personRepository.save(personParaSalvar);
-        return "Pessoa salva com id: " + personSalva.getId();
+        return MessageResponseDTO.createPerson(personSalva.getId());
     }
 
     public List<PersonDTO> listAll() {
@@ -40,14 +41,14 @@ public class PersonService {
     public String delete(Long id) throws PersonNotFoundException {
         verifyIfExists(id);
         personRepository.deleteById(id);
-        return "Deletada pesssoa com id: " + id;
+        return MessageResponseDTO.delete(id);
     }
 
     public String replace(Long id, PersonDTO personDTO) throws PersonNotFoundException {
         verifyIfExists(id);
         Person personParaSalvar = personMapper.toModel(personDTO);
         Person personSalva = personRepository.save(personParaSalvar);
-        return "Pessoa com id " + personSalva.getId() + " atualizada";
+        return MessageResponseDTO.replace(personSalva.getId());
     }
 
     private Person verifyIfExists(Long id) throws PersonNotFoundException {
